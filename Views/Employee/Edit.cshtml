@@ -1,0 +1,35 @@
+@model MvcApp.Models.Employee;
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+<h4>@ViewData["Title"]</h4>
+<a asp-action="Index" class="btn btn-outline-primary">View List</a>
+<div class="card col-md-6 mt-3">
+    <div class="card-body">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="mb-3 form-group">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" asp-for="Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label class="form-label">Divisi</label>
+                <input type="text" class="form-control" asp-for="Division">
+                <span asp-validation-for="Division" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label class="form-label">Role</label>
+                <input type="text" class="form-control" asp-for="Role">
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+</div>
+
+@* untuk jquery validation *@
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

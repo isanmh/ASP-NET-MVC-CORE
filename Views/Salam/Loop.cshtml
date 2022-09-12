@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Loop";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <ul>
+        @for (int i = 0; i < (int)ViewData["Jml"]!; i++)
+        {
+            <li>
+                @ViewData["Pesan"]
+            </li>
+        }
+    </ul>
+</div>

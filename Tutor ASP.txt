@@ -1,0 +1,80 @@
+cara install ASP :
+- sdk .net 6 
+- #c extension
+
+cek dotnet di terminal:
+dotnet --version
+
+cara install mvc :
+dotnet new mvc -o MvcApp
+
+cd MvcApp
+
+Untuk menjalankan project :
+ctrl + f5
+dotnet dev-certs https --trust
+dotnet watch run // untuk menjalankan project secara realtime
+
+
+Ektensi c# asp net :
+.Net Core Tools
+asp.net helper
+asp.net core switcher
+asp.net core snippets
+C# Extensions
+IntelliSense for CSS class names in HTML
+Prettier - Code formatter
+vscode-icons
+
+Setting Prettier untuk format dokument :
+masuk ke setting : ctrl + ,
+
+Langkah2 membuat suatu model :
+- buat Model 
+- buat Model db Context 
+- Koneksi database di program.cs
+- Lakukan migration :
+    dotnet tool install --global dotnet-ef
+    dotnet tool update --global dotnet-ef
+
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+
+- mengunakan nuget gallerry :
+    ctrl + shipf + p
+    microsoft framework sql server    
+    microsoft framework Core tools  
+
+- cara membuat CRUD : 
+buat Controller 
+buat di dalam conttoller Koneksi ke dbContext -> Model
+buat fungsi CRUD :
+orm : 
+_db.ToListAsync()
+_db.Add(employee);
+_db.Employees.FindAsync(id);
+_db.Update(employee);
+_db.Employees.Remove(employee);
+
+CRUD Otomatis :
+buat model
+ini packages yg digunakan :
+dotnet tool uninstall --global dotnet-aspnet-codegenerator
+dotnet tool install --global dotnet-aspnet-codegenerator
+dotnet tool uninstall --global dotnet-ef
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SQLite
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+dotnet-aspnet-codegenerator controller -name MoviesController -m Movie -dc MovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries 
+
+dotnet aspnet-codegenerator controller -h
+dotnet ef migrations add NamaMigrationContext --context NamaContext
+
+untuk menghapus Migration
+dotnet ef migrations remove --context NamaContext
+
+migrate :
+dotnet ef database update --context NamaContext

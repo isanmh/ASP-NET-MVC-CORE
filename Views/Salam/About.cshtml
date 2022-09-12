@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "About";
+    ViewData["Nama"] = "Ihsan Miftahul";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="card" style="width: 18rem;">
+    <img src="~/images/profile.png" alt="">
+    <div class="card-body">
+        <h5 class="card-title">@ViewData["nama"]</h5>
+        <p class="card-text">@ViewData["divisi"]</p>
+        <small>@ViewData["role"]</small>
+    </div>
+</div>

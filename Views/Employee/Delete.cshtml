@@ -1,0 +1,27 @@
+@model MvcApp.Models.Employee;
+<div class="alert alert-warning" role="alert">
+    <h5 class="text-center">
+        Are you sure you want to delete this?
+    </h5>
+    <hr>
+    <div class="col">
+        @Html.DisplayNameFor(model => model.Name) :
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <div class="col">
+        @Html.DisplayNameFor(model => model.Division) :
+        @Html.DisplayFor(model => model.Division)
+    </div>
+    <div class="col">
+        @Html.DisplayNameFor(model => model.Role) :
+        @Html.DisplayFor(model => model.Role)
+    </div>
+    @* ini tombol untuk Delete*@
+    <div class="row mt-5">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" class="btn btn-danger" value="Delete" />
+            <a asp-action="Index" class="btn btn-primary ">Back to List</a>
+        </form>
+    </div>
+</div>
